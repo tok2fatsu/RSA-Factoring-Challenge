@@ -1,0 +1,32 @@
+#!/usr/bin/python3
+
+import sys
+
+
+# fn unpack number factorial
+def fc():
+    """
+    function fc to search file to convert number and format n=p*q
+    """
+    try:
+        intfile = sys.argv[1]
+        with open(intfile) as f:
+            for intnumber in f:
+                intnumber = int(intnumber)
+                if intnumber % 2 == 0:
+                        print("{}={}*{}".format(intnumber, intnumber // 2, 2))
+                        continue
+                n = 3
+                while n < intnumber // 2:
+                    if intnumber % n == 0:
+                        print("{}={}*{}".format(intnumber, intnumber // n, n))
+                        break
+                    n = n + 2
+                if n == (intnumber // 2) + 1:
+                    print("{}={}*{}".format(intnumber, intnumber, 1))
+    except (IndexError):
+        pass
+
+
+# autostart
+fc()
