@@ -10,9 +10,11 @@ def factorize(val):
     if val < 2:
         return
     print()
+    print(val, "<- value before")
     while val % n:
         n += 1
     print("{:.0f}={:.0f}*{:.0f}".format(val, val / n, n))
+    print(val, "<- value after")
     print()
 
 if len(argv) != 2:
@@ -27,4 +29,4 @@ try:
             factorize(val)
             line = file.readline()
 except:
-    passs
+    pass
